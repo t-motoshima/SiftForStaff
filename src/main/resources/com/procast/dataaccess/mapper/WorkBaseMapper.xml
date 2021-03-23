@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.procast.attendance.dataaccess.mapper.WorkBaseMapper">
+
+	<!-- select -->
+	<select id="selectWorkBaseOne" resultType="com.procast.attendance.entity.WorkBase">
+		select
+			workBaseCode
+			,workBaseName
+			,effectiveDate
+			,expireDate
+			,createDate
+			,createUser
+			,lastUpdateDate
+			,lastUpdateUser
+		 from workBaseMaster
+		 where workBaseCode = #{workBaseCode}
+	</select>
+
+	<select id="selectWorkBaseAll" resultType="com.procast.attendance.entity.WorkBase">
+		select
+			workBaseCode
+			,workBaseName
+			,effectiveDate
+			,expireDate
+			,createDate
+			,createUser
+			,lastUpdateDate
+			,lastUpdateUser
+		 from workBaseMaster
+	</select>
+
+	<!-- insert SQL -->
+	<insert id="insertWrokBase">
+		insert into workBaseMaster
+		(
+			workBaseCode
+			,workBaseName
+			,effectiveDate
+			,expireDate
+			,createDate
+			,createUser
+			,lastUpdateDate
+			,lastUpdateUser
+		)
+		values
+		(
+			#{workBaseCode}
+			,#{workBaseName}
+			,#{effectiveDate}
+			,#{expireDate}
+			,#{createDate}
+			,#{createUser}
+			,#{lastUpdateDate}
+			,#{lastUpdateUser}
+		)
+	</insert>
+
+	<!-- update SQL -->
+	<update id="updateWorkBase">
+		update workBaseMaster
+		set
+			workBaseName = #{workBaseName}
+			,effectiveDate = #{effectiveDate}
+			,expireDate = #{expireDate}
+			,lastUpdateDate = #{lastUpdateDate}
+			,lastUpdateUser = #{lastUpdateUser}
+		where workBaseCode = #{workUaseCode}
+	</update>
+
+</mapper>

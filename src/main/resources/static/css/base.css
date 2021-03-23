@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+.pcl_half {
+	width: 50%;
+}
+
+.pcl_w_60 {
+	width: 60%;
+}
+
+.pcl_w_80 {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.err_msg {
+	color: red;
+	padding: 1.25rem 0;
+}
+
+.pcl_hr1 {
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #0099FF;
+}
+
+.pcl_menu {
+	background-color: #00d1b2;
+	border-radius: .375em;
+	font-weight: 600;
+}
+
+.pcl_menu a {
+	color: #fff;
+	text-align: center;
+	display: block;
+	height: 100%;
+	padding: 1.25rem 0;
+}
+
+.plc_button {
+	margin-top: 2em;
+}
+
+.pcl_month {
+	color: #364e96; /* 文字色 */
+	padding: 0.5em 0; /* 上下の余白 */
+	border-bottom: solid 2px #87ceeb; /* 下線 */
+}
+
+.pcl_tabl_theader {
+	text-align: center !important;
+}
+
+.pcl_sc_td {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+.pcl_sn_td {
+	min-width: 90px;
+}
+
+.pcl_sd_td {
+	min-width: 16px;
+}
+
+td.pcl_sat {
+	background-color: #c2eeff;
+}
+
+td.pcl_sun {
+	background-color: #ffe4e1;
+}
+
+th.pcl_complete {
+	width: 35%;
+	background-color: #ffffe0;
+}
+
+.pcl_tabl_head {
+	background-color: #ebf6f7;
+}
+
+.pcl_link_cell {
+	padding: 0 !important;
+	height: 0;
+	width: 50px;
+}
+
+.pcl_link_cell a{
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	padding-top: 12px;
+}
+
+.wrapper {
+  margin: 15px auto;
+  max-width: 700px;
+}
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-calendar th,
+.table-calendar td{
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+.date-picker.selected {
+  font-weight: bold;
+  color: #fff;
+  background: #cc0000;
+}
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+/* 日曜 */
+.date-picker:nth-child(1) {
+color: red;
+}
+/* 土曜 */
+.date-picker:nth-child(7) {
+color: blue;
+}
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+}
+#previous {
+  float: left;
+}
+#next {
+  float: right;
+}
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+.footer-container-calendar select {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #454545;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}

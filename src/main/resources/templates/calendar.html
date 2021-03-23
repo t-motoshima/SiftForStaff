@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+<link rel="stylesheet" href="css/base.css" th:href="@{/css/base.css}">
+</head>
+<body>
+  <div th:object="${output}">
+    <p>
+      <a href="calendar.html"
+        th:href="@{/calendar/month(year=*{yearOfPrevMonth}, month=*{monthOfPrevMonth})}">&larr;Prev</a>
+      <a href="calendar.html"
+        th:href="@{/calendar/month(year=*{yearOfNextMonth}, month=*{monthOfNextMonth})}">Next&rarr;</a> <br>
+      <span th:text="*{firstDayOfMonth.getYear().toString() + '年' + firstDayOfMonth.getMonth().getValue().toString() + '月'}"></span>
+    </p>
+    <table>
+      <tr>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+        <th>日</th>
+      </tr>
+      <tr th:each="week : *{calendar}">
+        <td th:each="day : ${week}">
+          <span th:text="${day != null}? ${day.getShiftDay()} : '&nbsp;'"></span>
+          <br>
+          <span th:text="${day != null}? ${day.getProcess()} : '&nbsp;'"></span>
+          <br>
+          <span th:text="${day != null}? ${day.getShiftPatternCode()} : '&nbsp;'"></span>
+          <br>
+          <span th:text="${day != null}? ${day.getStatus()} : '&nbsp;'"></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</head>
+</html>

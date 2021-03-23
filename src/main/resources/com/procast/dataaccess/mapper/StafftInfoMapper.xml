@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.procast.shift.dataaccess.mapper.StaffInfoMapper">
+	<!-- select -->
+	<select id="selectUserOne" resultType="com.procast.shift.entity.StaffInfo">
+		select
+			si.staffCode
+			,si.staffName
+			,si.staffFurigana
+			,si.employmentDate
+			,si.retirementDate
+			,si.affiliationCode
+			,am.affiliationName
+			,si.workBaseCode
+			,wm.workBaseName
+			,si.staffGradeCode
+			,gm.staffGradeName
+			,si.mainProcessCode
+			,pm.processName
+			,si.salespersonCode
+			,si.ownerFlg
+			,si.loginErrCnt
+			,si.passCode
+			,si.holidaySunFlg
+			,si.holidayMonFlg
+			,si.holidayTueFlg
+			,si.holidayWedFlg
+			,si.holidayThuFlg
+			,si.holidayFriFlg
+			,si.holidaySatFlg
+			,si.paidLeaveRemaing
+			,si.createDate
+			,si.createUser
+			,si.lastUpdateDate
+			,si.lastUpdateUser
+		from mydb.staffInfo si
+			left join mydb.affiliationMaster am
+			on si.affiliationCode = am.affiliationCode
+			left join mydb.workBaseMaster wm
+			on si.workBaseCode = wm.workBaseCode
+			left join mydb.gradeMaster gm
+			on si.staffGradeCode = gm.staffGradeCode
+			left join mydb.processMaster pm
+			on  si.workBaseCode = pm.workBaseCode
+			and si.mainProcessCode = pm.processCode
+		 where staffCode = #{staffCode}
+	</select>
+</mapper>
